@@ -9,17 +9,18 @@
     "test:report": "playwright show-report",
     "test:codegen": "playwright codegen",
     "test:install": "playwright install",
-    "test:update": "playwright test --update-snapshots"
+    "test:update": "playwright test --update-snapshots",
+    "test:regression": "playwright test tests/regression"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.29"
   },
   "dependencies": {
+    "@playwright/test": "^1.55.0",
     "dotenv": "^16.5.0"
   }
-  
+
 }

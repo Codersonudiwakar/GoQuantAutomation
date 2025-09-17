@@ -1,50 +1,65 @@
 const testData = {
-  validCredentials: {
-    username: 'Admin',
-    password: 'admin123'
+  // Valid user data
+  validUser: {
+    username: 'testuser6655',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'testuser01@example.com',
+    password: 'Test@1234',
+    confirmPassword: 'Test@1234'
   },
-  
-  invalidCredentials: [
-    {
-      scenario: 'Invalid Username',
-      username: 'InvalidUser',
-      password: 'admin123',
-      expectedError: 'Invalid credentials'
+
+  // Invalid user data for negative tests
+  invalidUsers: {
+    shortPassword: {
+      username: 'shortpassuser',
+      firstName: 'Alice',
+      lastName: 'Smith',
+      email: 'shortpass@example.com',
+      password: 'short',
+      confirmPassword: 'short'
     },
-    {
-      scenario: 'Invalid Password',
-      username: 'Admin',
-      password: 'wrongpassword',
-      expectedError: 'Invalid credentials'
+    passwordMismatch: {
+      username: 'mismatchuser',
+      firstName: 'Bob',
+      lastName: 'Johnson',
+      email: 'mismatch@example.com',
+      password: 'Password123!',
+      confirmPassword: 'Different123!'
     },
-    {
-      scenario: 'Empty Username',
-      username: '',
-      password: 'admin123',
-      expectedError: 'Required'
-    },
-    {
-      scenario: 'Empty Password',
-      username: 'Admin',
-      password: '',
-      expectedError: 'Required'
-    },
-    {
-      scenario: 'Both Fields Empty',
-      username: '',
-      password: '',
-      expectedError: 'Required'
+    invalidEmail: {
+      username: 'invalidemailuser',
+      firstName: 'Eve',
+      lastName: 'Brown',
+      email: 'invalid-email',
+      password: 'ValidPass123!',
+      confirmPassword: 'ValidPass123!'
     }
-  ],
-
-  urls: {
-    loginPage: '/web/index.php/auth/login',
-    dashboard: '/web/index.php/dashboard/index'
   },
 
-  pageElements: {
-    pageTitle: 'OrangeHRM',
-    loginTitle: 'Login',
-    dashboardTitle: 'Dashboard'
+  // Product search data
+  products: {
+    validSearch: 'laptop',
+    invalidSearch: 'nonexistentproductxyz',
+    filterCategory: 'electronics'
+  },
+
+  // Checkout data
+  shippingInfo: {
+    firstName: 'Jane',
+    lastName: 'Doe',
+    email: 'jane.doe@example.com',
+    address: '123 Main Street',
+    city: 'Bangalore',
+    zip: '560001'
+  },
+
+  paymentInfo: {
+    validCard: '4111111111111111',   // common Visa test card
+    invalidCard: '1234567812345678',
+    expiryDate: '12/25',
+    cvv: '123'
   }
 };
+
+module.exports = testData;
